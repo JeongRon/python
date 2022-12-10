@@ -25,10 +25,14 @@ else:
     min_len = INF
 
     while start != n:
+        # seq[end] - seq[start] 값이 s보다 크거나 같을 때
+        # start++ 시키기
         if seq[end] - seq[start] >= s:
             if end - start < min_len:
                 min_len = end - start
             start += 1
+        # seq[end] - seq[start] 값이 s보다 작을 때
+        # 보통 end++ 시키기 (end가 인덱스 끝까지 갔으면, start++)
         else:
             if end != n:
                 end += 1
